@@ -1,3 +1,5 @@
+#!/bin/bash
+
 jupyter nbextension enable toc2/main
 jupyter nbextension toggle_all_line_numbers/main
 
