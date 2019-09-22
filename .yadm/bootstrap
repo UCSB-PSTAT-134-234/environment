@@ -1,21 +1,15 @@
 #!/bin/bash
 
-jupyter nbextension enable toc2/main
-jupyter nbextension enable toggle_all_line_numbers/main
-
 ## classic notebook extensions
-mkdir -p $(jupyter --data-dir)/nbextensions && \
-	cd $(jupyter --data-dir)/nbextensions
-
-git clone https://github.com/lambdalisue/jupyter-vim-binding vim_binding && \
-	jupyter nbextension enable vim_binding/vim_binding
-
-pip install --pre rise && \
-	jupyter nbextension install rise --py --sys-prefix && \
-	jupyter nbextension enable rise --py --sys-prefix
+jupyter nbextension enable vim_binding/vim_binding
+jupyter nbextension enable rise --py --sys-prefix
 
 ## lab extensions
 jupyter labextension install jupyterlab_vim
 jupyter labextension install @jupyterlab/toc
 jupyter labextension install jupyterlab-drawio
 jupyter labextension install @krassowski/jupyterlab_go_to_definition
+
+git config --global user.email "syoh@ucsb.edu"
+git config --global user.name "Sang-Yun Oh"
+git config --global credential.helper cache
