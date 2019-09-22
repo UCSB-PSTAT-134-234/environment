@@ -12,4 +12,7 @@ jupyter labextension install @krassowski/jupyterlab_go_to_definition
 
 git config --global user.email "syoh@ucsb.edu"
 git config --global user.name "Sang-Yun Oh"
+<<<<<<< HEAD
 git config --global credential.helper cache
+=======
+>>>>>>> 54d6a2ac550c080f1808f4f55ed49f73e33e2bed
