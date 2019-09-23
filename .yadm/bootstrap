@@ -8,3 +8,8 @@ jupyter labextension enable jupyterlab_vim
 git config --global user.email "syoh@ucsb.edu"
 git config --global user.name "Sang-Yun Oh"
 git config --global credential.helper cache
+
+sudo apt-get update 
+sudo apt-get install neovim
+sudo rm /usr/local/bin/vim
+sudo ln -s $(which nvim) /usr/local/bin/vim
