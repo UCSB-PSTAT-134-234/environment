@@ -1,7 +1,9 @@
 #!/bin/bash
 
-jupyter nbextension enable vim_binding/vim_binding
+jupyter nbextensions_configurator enable --sys-prefix
 jupyter nbextension enable rise --py --sys-prefix
+jupyter nbextension enable vim_binding/vim_binding --sys-prefix
+jupyter labextension enable jupyterlab_vim
 
 git config --global user.email "syoh@ucsb.edu"
 git config --global user.name "Sang-Yun Oh"
