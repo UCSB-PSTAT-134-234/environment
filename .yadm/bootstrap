@@ -1,8 +1,14 @@
 #!/bin/bash
 
 jupyter nbextensions_configurator enable --sys-prefix
-jupyter nbextension enable rise --py --sys-prefix
 jupyter nbextension enable vim_binding/vim_binding --sys-prefix
+
+pip install --pre rise && \
+    jupyter nbextension install rise --py --user && \
+    jupyter nbextension enable rise --py --user && \
+    sed -i 's/^\.reveal a/body.notebook_app.rise-enabled .reveal a/g' \
+        ~/.local/share/jupyter/nbextensions/rise/reveal.js/css/theme/*.css
+
 jupyter labextension enable jupyterlab_vim
 
 git config --global user.email "syoh@ucsb.edu"
