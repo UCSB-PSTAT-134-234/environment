@@ -3,11 +3,11 @@
 jupyter nbextensions_configurator enable --sys-prefix
 jupyter nbextension enable vim_binding/vim_binding --sys-prefix
 
+export RISE_DIR=${HOME}/.local/share/jupyter/nbextensions/rise/reveal.js/css/theme
 pip install --pre rise && \
     jupyter nbextension install rise --py --user && \
     jupyter nbextension enable rise --py --user && \
-    sed -i 's/^\.reveal a/body.notebook_app.rise-enabled .reveal a/g' \
-        ~/.local/share/jupyter/nbextensions/rise/reveal.js/css/theme/*.css
+    sed -i 's/^\.reveal a/body.notebook_app.rise-enabled .reveal a/g' ${RISE_DIR}/*.css
 
 jupyter labextension enable jupyterlab_vim
 
@@ -16,6 +16,6 @@ git config --global user.name "Sang-Yun Oh"
 git config --global credential.helper cache
 
 sudo apt-get update && \
-    sudo apt-get install neovim && \
+    sudo apt-get install -y neovim && \
     sudo rm /usr/local/bin/vim && \
     sudo ln -s $(which nvim) /usr/local/bin/vim
