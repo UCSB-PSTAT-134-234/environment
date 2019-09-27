@@ -47,7 +47,7 @@ background-attachment: fixed !important;
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #333;
+  color: #003660;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-weight: 600;
   line-height: 1.2;
@@ -56,7 +56,6 @@ background-attachment: fixed !important;
   word-wrap: break-word; }
 
 .reveal h1 {
-  color: #003660;
   text-transform: uppercase;
   font-size: 2.5em; }
 
