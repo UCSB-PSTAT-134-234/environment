@@ -100,5 +100,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Vi mode
 bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 eval $(thefuck --alias)
