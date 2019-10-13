@@ -20,8 +20,9 @@ sudo apt-get update && \
     sudo rm /usr/local/bin/vim && \
     sudo ln -s $(which nvim) /usr/local/bin/vim
 
-sudo apt install -y zsh powerline fonts-powerline && \
-    CHSH=no sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
 pip install thefuck
 
+sudo apt install -y zsh powerline fonts-powerline && \
+    CHSH=no sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" && \
+    test -f ~/.zshrc.pre-oh-my-zsh && \
+    mv ~/.zshrc.pre-oh-my-zsh .zshrc  ## restore my .zshrc
