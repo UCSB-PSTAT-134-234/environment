@@ -95,6 +95,7 @@ export EDITOR='vim'
 
 # Vi mode
 bindkey -v
+bindkey jk vi-cmd-mode
 bindkey '^R' history-incremental-search-backward
 
 # >>> conda initialize >>>

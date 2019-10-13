@@ -131,3 +131,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+bind '"jk":vi-movement-mode'
