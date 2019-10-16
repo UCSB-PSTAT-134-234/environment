@@ -1,5 +1,6 @@
 #!/bin/bash
 
+## Jupyter Classic Notebook Extensions
 jupyter nbextensions_configurator enable --sys-prefix
 jupyter nbextension enable vim_binding/vim_binding --sys-prefix
 
@@ -9,6 +10,12 @@ pip install --pre rise && \
     jupyter nbextension enable rise --py --user && \
     sed -i 's/^\.reveal a/body.notebook_app.rise-enabled .reveal a/g' ${RISE_DIR}/*.css
 
+pip install hide_code && \
+    jupyter nbextension install --py hide_code --sys-prefix && \
+    jupyter nbextension enable --py hide_code --sys-prefix && \
+    jupyter serverextension enable --py hide_code --sys-prefix && \
+
+## Jupyter Lab Extensions
 jupyter labextension enable jupyterlab_vim
 
 git config --global user.email "syoh@ucsb.edu"
@@ -25,4 +32,4 @@ pip install thefuck
 sudo apt install -y zsh powerline fonts-powerline && \
     RUNZSH=no CHSH=no sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" && \
     test -f ~/.zshrc.pre-oh-my-zsh && \
-    mv ~/.zshrc.pre-oh-my-zsh .zshrc  ## restore my .zshrc
+    mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc  ## restore my .zshrc
