@@ -6,6 +6,8 @@
   "keys": {
     "command": {
         "bind": {
+            "z,k,a":"vim-binding:restart-kernel-and-run-all-cells",
+            "z,a":"vim-binding:run-all-cells-above",
             "h,c":"hide_code:hide_code_action",
             "s,c":"hide_code:show_code_action",
             "h,o":"hide_code:hide_output_action",
