@@ -1,13 +1,13 @@
 #!/bin/bash
 
-mkdir -p $(jupyter --data-dir)/nbextensions
-cd $(jupyter --data-dir)/nbextensions
-git clone https://github.com/lambdalisue/jupyter-vim-binding vim_binding
-jupyter nbextension enable vim_binding/vim_binding
+mkdir -p $(jupyter --data-dir)/nbextensions && \
+    cd $(jupyter --data-dir)/nbextensions && \
+    git clone https://github.com/lambdalisue/jupyter-vim-binding vim_binding && \
+    jupyter nbextension enable vim_binding/vim_binding
 
 ## Jupyter Classic Notebook Extensions
-jupyter nbextensions_configurator enable --sys-prefix
-jupyter nbextension enable vim_binding/vim_binding --sys-prefix
+jupyter nbextensions_configurator enable --sys-prefix && \
+    jupyter nbextension enable vim_binding/vim_binding --sys-prefix
 
 export RISE_DIR=${HOME}/.local/share/jupyter/nbextensions/rise/reveal.js/css/theme
 pip install --pre rise && \
@@ -23,18 +23,21 @@ pip install hide_code && \
 ## Jupyter Lab Extensions
 jupyter labextension enable jupyterlab_vim
 
-git config --global user.email "syoh@ucsb.edu"
-git config --global user.name "Sang-Yun Oh"
-git config --global credential.helper cache
+git config --global user.email "syoh@ucsb.edu" && \
+    git config --global user.name "Sang-Yun Oh" && \
+    git config --global credential.helper cache
 
+## zshell
 sudo apt-get update && \
-    sudo apt-get install -y neovim && \
-    sudo rm /usr/local/bin/vim && \
-    sudo ln -s $(which nvim) /usr/local/bin/vim
-
-pip install thefuck
-
-sudo apt install -y zsh powerline fonts-powerline && \
+    apt-get install -y zsh powerline fonts-powerline && \
     RUNZSH=no CHSH=no sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" && \
     test -f ~/.zshrc.pre-oh-my-zsh && \
     mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc  ## restore my .zshrc
+
+## neovim
+sudo sudo apt-get install -y neovim && \
+    sudo rm /usr/local/bin/vim && \
+    sudo ln -s $(which nvim) /usr/local/bin/vim
+
+## shell improvements
+pip install python-gist thefuck
