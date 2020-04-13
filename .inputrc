@@ -1,0 +1,28 @@
+set editing-mode vi
+
+# Enable coloring for tab completions with bash >= 4.3
+set colored-stats onset editing-mode vi
+
+set show-all-if-ambiguous on         # first tab: show all completions 
+set completion-ignore-case on        # Ignore case
+set menu-complete-display-prefix on  # next tabs: cycle through
+
+#### command mode
+
+set keymap vi-command
+
+# Insert the arguments from the last command
+# "p": "i !!*\r"
+
+"\e[A": history-search-backward ## arrow up
+"\e[B": history-search-forward  ## arrow down
+
+#### insert mode
+set keymap vi-insert
+
+"jk": vi-movement-mode  # jk sequence for escape
+
+# Option-up/option-down should also apply to insert mode
+"\e[A": history-search-backward ## arrow up
+"\e[B": history-search-forward  ## arrow down
+
